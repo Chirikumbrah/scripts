@@ -23,11 +23,8 @@ case $1 in
 
         if [ "$SELECTED" = "l" ] || [ "$SELECTED" = "lock" ] || [ "$SELECTED" = "д" ]; then
             notify-send "locking..." -u low
-<<<<<<< HEAD
             sh "$HOME/.scripts/lock"
-=======
             sh "$HOME/.scripts/system/lock.sh"
->>>>>>> 5b0daed (added post_install scripts)
         elif [ "$SELECTED" = "e" ] || [ "$SELECTED" = "exit" ] || [ "$SELECTED" = "у" ]; then
             dwm=$( ps -o pid,cmd ax | awk '/dwm/{ if ($2 == "dwm") print $1 }' )
             notify-send "exiting..." -u low
