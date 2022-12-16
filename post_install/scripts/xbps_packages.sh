@@ -4,7 +4,7 @@ sudo xbps-install -Suy void-repo-multilib void-repo-multilib-nonfree void-repo-n
 sudo xbps-install -Suy
 sudo xbps-install -Suy ffmpeg obs ffscreencast ranger unrar tar p7zip p7zip-unrar lm_sensors i3lock-color mtools docker tree qt6ct qt5ct \
     lxqt-sudo bind-utils shellcheck cargo udevil jmtpfs ImageMagick usbutils Adapta abiword \
-    skype libsecret glow ntfs-3g jq ueberzug gnupg terraform testdisk \
+    skype libsecret glow ntfs-3g jq ueberzug gnupg taplo terraform-ls testdisk \
     pamixer alsa-plugins-pulseaudio kolourpaint perl-rename go \
     android-file-transfer-linux neovim ctags libgcc-32bit gimp libstdc++-32bit \
     libdrm-32bit libglvnd-32bit mesa-dri-32bit cronie alsa-utils packer ark automake xkb-switch \
