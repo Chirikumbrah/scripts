@@ -12,7 +12,7 @@ sudo xbps-install -Suy ffmpeg obs ffscreencast ranger unrar tar p7zip p7zip-unra
     sysstat bluez-alsa breeze-cursors calligra-sheets trash-cli \
     # fonts
     font-fantasque-sans-ttf terminus-font font-material-design-icons-ttf ttf-material-icons \
-    font-adobe-utopia-100dpi font-adobe-utopia-75dpi font-misc-misc terminus-font noto-fonts-ttf-extra \
+    font-adobe-utopia-100dpi font-adobe-utopia-75dpi font-misc-misc terminus-font noto-fonts-ttf-extra noto-fonts-emoji \
     font-adobe-100dpi font-adobe-75dpi dejavu-fonts-ttf noto-fonts-cjk noto-fonts-ttf nerd-fonts \
     cmake xdg-utils xdg-user-dirs libqtxdg libcanberra clang \
     curl audacious audacious-plugins gtk+-devel gtk+3-devel net-tools network-manager-applet NetworkManager-openvpn \
