@@ -2,7 +2,7 @@
 
 sudo xbps-install -Suy void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree
 sudo xbps-install -Suy
-sudo xbps-install -Suy ffmpeg obs ffscreencast ranger unrar tar p7zip p7zip-unrar lm_sensors i3lock-color mtools docker tree qt6ct qt5ct \
+sudo xbps-install -Suy ffmpeg obs ffscreencast lf unrar tar p7zip p7zip-unrar lm_sensors i3lock-color mtools docker tree qt6ct qt5ct \
     lxqt-sudo bind-utils shellcheck cargo udevil jmtpfs ImageMagick usbutils Adapta abiword \
     skype libsecret glow ntfs-3g jq ueberzug gnupg taplo testdisk \
     pamixer alsa-plugins-pulseaudio kolourpaint perl-rename go \
