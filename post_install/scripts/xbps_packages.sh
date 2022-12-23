@@ -28,4 +28,4 @@ sudo xbps-install -Suy ffmpeg obs ffscreencast lf unrar tar p7zip p7zip-unrar lm
     xdo xdotool xkill xorg intel-ucode xorg-input-drivers dmenu j4-dmenu-desktop \
     orage calcurse xorg-video-drivers xz zsh dbus-elogind dbus-elogind-libs dbus-x11 \
     zathura zathura-pdf-mupdf zathura-cb zathura-djvu zathura-ps sl exa tldr fd duf ack bat \
-    galculator
+    galculator antibody
