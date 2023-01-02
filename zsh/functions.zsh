@@ -47,3 +47,10 @@ function open () {
   fi
 }
 
+function trs () {
+  if [ "$1" != '' ]; then
+    fd . "$1" --hidden --type=file --color=always | fzf --ansi -m | xargs -I {} trash {}
+  else
+    fd --hidden --type=file --color=always | fzf --ansi -m | xargs -I {} trash {}
+  fi
+}
