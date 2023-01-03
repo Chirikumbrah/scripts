@@ -54,3 +54,15 @@ function trs () {
     fd --hidden --type=file --color=always | fzf --ansi -m | xargs -I {} trash {}
   fi
 }
+
+function test () {
+  if [ "$1" != "" ]; then
+    if [ "$1" = "\~" ] || [ "$1" = "/" ]; then
+      echo "$1"
+    else
+      echo "single file"
+    fi
+  else
+    echo "no file"
+  fi
+}
