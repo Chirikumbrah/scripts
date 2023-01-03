@@ -5,7 +5,11 @@ function ll () {
 
 function fcd () {
   if [ "$1" != '' ]; then
-    cd "$(fd . "$1" --hidden --type=directory --color=always | fzf --ansi)"
+    if [ "$1" = "$HOME" ] || [ "$1" = "/" ]; then
+      cd "$(fd . "$1" --hidden --type=directory --color=always | fzf --ansi)"
+    else
+      cd "$1"
+    fi
   else
     cd "$(fd --hidden --type=directory --color=always | fzf --ansi)"
   fi
@@ -13,11 +17,13 @@ function fcd () {
 
 function edit () {
   if [ "$1" != '' ]; then
-    FILE="$(fd . "$1" --hidden --type=file --color=always | fzf --ansi)"
-    if [ "$FILE" != '' ]; then
-      $EDITOR "$FILE"
+    if [ "$1" = "$HOME" ] || [ "$1" = "/" ]; then
+      FILE="$(fd . "$1" --hidden --type=file --color=always | fzf --ansi)"
+      if [ "$FILE" != '' ]; then
+        $EDITOR "$FILE"
+      fi
     else
-      echo "No file selected."
+      $EDITOR "$1"
     fi
   else
     FILE="$(fd --hidden --type=file --color=always | fzf --ansi)"
@@ -31,16 +37,18 @@ function edit () {
 
 function open () {
   if [ "$1" != '' ]; then
-    FILE="$(fd . "$1" --hidden --type=file --color=always | fzf --ansi)"
-    if [ "$FILE" != '' ]; then
-      xdg-open "$FILE"
+    if [ "$1" = "$HOME" ] || [ "$1" = "/" ]; then
+      FILE="$(fd . "$1" --hidden --type=file --color=always | fzf --ansi)"
+      if [ "$FILE" != '' ]; then
+        xdg-open "$FILE" &
+      fi
     else
-      echo "No file selected."
+      xdg-open "$1" &
     fi
   else
     FILE="$(fd --hidden --type=file --color=always | fzf --ansi)"
     if [ "$FILE" != '' ]; then
-      xdg-open "$FILE"
+      xdg-open "$FILE" &
     else
       echo "No file selected."
     fi
@@ -49,20 +57,13 @@ function open () {
 
 function trs () {
   if [ "$1" != '' ]; then
-    fd . "$1" --hidden --type=file --color=always | fzf --ansi -m | xargs -I {} trash {}
+    if [ "$1" = "$HOME" ] || [ "$1" = "/" ]; then
+      fd . "$1" --hidden --type=file --color=always | fzf --ansi -m | xargs -I {} trash {}
+    else
+      trash "$1"
+    fi
   else
     fd --hidden --type=file --color=always | fzf --ansi -m | xargs -I {} trash {}
   fi
 }
 
-function test () {
-  if [ "$1" != "" ]; then
-    if [ "$1" = "\~" ] || [ "$1" = "/" ]; then
-      echo "$1"
-    else
-      echo "single file"
-    fi
-  else
-    echo "no file"
-  fi
-}
