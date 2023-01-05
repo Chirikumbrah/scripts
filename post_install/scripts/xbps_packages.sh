@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 sudo xbps-install -Suy void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree
 sudo xbps-install -Suy
@@ -21,7 +21,7 @@ sudo xbps-install -Suy ffmpeg obs ffscreencast unrar tar p7zip p7zip-unrar lm_se
     # X11 dependencies
     libXtst-devel libXi-devel libX11-devel libXft-devel libXinerama-devel libXfixes-devel \
     htop kdeconnect keepassxc libev libev-devel meson ninja \
-    libgnome-keyring lingot lvm2 SDL2_image libenet make xcb-util-image-devel xcb-util-image \
+    libgnome-keyring lingot lvm2 SDL2_image libinput-gestures libenet make xcb-util-image-devel xcb-util-image \
     mdadm nano neofetch gstreamer1 libnuma xcb-util-renderutil-devel xcb-util-renderutil \
     papirus-icon-theme xcursor-themes LGOGDownloader clipit gparted picard qimgv telegram-desktop \
     tlp tlp-rdw transmission-qt udisks2 wget psutils wine wine-32bit wine-gecko mesa-vulkan-intel wine-mono mono winetricks wmctrl xauth xbacklight \
