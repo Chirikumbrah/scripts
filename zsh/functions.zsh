@@ -40,15 +40,15 @@ function open () {
     if [ "$1" = "$HOME/" ] || [ "$1" = "$HOME" ] || [ "$1" = "/" ]; then
       FILE="$(fd . "$1" --hidden --type=file --color=always | fzf --ansi)"
       if [ "$FILE" != '' ]; then
-        (xdg-open "$FILE" &)
+        (xdg-open "$FILE" &> /dev/null &)
       fi
     else
-      (xdg-open "$1" &)
+      (xdg-open "$1" &> /dev/null &)
     fi
   else
     FILE="$(fd --hidden --type=file --color=always | fzf --ansi)"
     if [ "$FILE" != '' ]; then
-      (xdg-open "$FILE" &)
+      (xdg-open "$FILE" &> /dev/null &)
     else
       echo "No file selected."
     fi
