@@ -14,9 +14,9 @@ picom-pijulius                       \
     --animation-window-mass 0.5      \
     --animation-for-open-window zoom \
     --animation-stiffness 350        \
-    --experimental-backends          
+    --backend xr_glx_hybrid
+    # --experimental-backends          
     # --backend glx
-    # --backend xr_glx_hybrid
     # --backend xrender
 
 # keyboard layouts
