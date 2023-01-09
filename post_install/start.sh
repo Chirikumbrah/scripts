@@ -6,7 +6,7 @@ sh ./scripts/xbps_packages.sh
 sh ./scripts/pip_packages.sh
 sh ./scripts/npm_packages.sh
 sh ./scripts/zsh_install.sh
-fish ./scripts/fish_install.fish
+# fish ./scripts/fish_install.fish
 sh ./scripts/llama_installing.sh
 sh ./scripts/picom_installing.sh.sh
 sh ./scripts/warpd_installing.sh
