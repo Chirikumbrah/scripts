@@ -7,7 +7,7 @@ NORMBGCOLOR="#bd93f9"
 NORMFGCOLOR="#282a36"
 SELBGCOLOR="#50fa7b"
 SELFGCOLOR="#282a36"
-
+SHELL="/bin/bash"
 
 case $1 in
     powermenu)
