@@ -25,6 +25,13 @@ setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle' -print | xkbcomp - "$DI
 # update/create user dirs
 xdg-user-dirs-update
 
+# Setup dunst daemon
+DUNST_PID=$(pgrep --uid $USER -x dunst)
+if [ -n "$DUNST_PID" ]; then
+  kill $DUNST_PID
+fi &
+# dunst "$@" &
+
 # run warpd
 warpd
 
