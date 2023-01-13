@@ -9,7 +9,6 @@
 # desktop effects
 picom-pijulius                       \
      -fb                             \
-    --vsync                          \
     --animations                     \
     --animation-window-mass 0.5      \
     --animation-for-open-window zoom \
