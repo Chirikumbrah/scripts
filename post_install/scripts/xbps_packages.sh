@@ -26,6 +26,6 @@ sudo xbps-install -Suy ffmpeg obs ffscreencast unrar tar p7zip p7zip-unrar lm_se
     papirus-icon-theme xcursor-themes LGOGDownloader clipit gparted picard qimgv telegram-desktop \
     tlp tlp-rdw transmission-qt udisks2 wget psutils wine wine-32bit wine-gecko mesa-vulkan-intel wine-mono mono winetricks wmctrl xauth xbacklight \
     xdo xdotool xkill xorg intel-ucode xorg-input-drivers dmenu j4-dmenu-desktop \
-    orage calcurse xorg-video-drivers xz fish starship delta dbus-elogind dbus-elogind-libs dbus-x11 \
+    orage calcurse xorg-video-drivers xz fish-shell starship delta dbus-elogind dbus-elogind-libs dbus-x11 \
     zathura zathura-pdf-mupdf zathura-cb zathura-djvu zathura-ps sl exa tldr fd duf fzf bat \
     galculator antibody geteltorito grc
