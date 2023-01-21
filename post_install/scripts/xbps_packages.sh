@@ -30,4 +30,4 @@ sudo xbps-install -Suy ffmpeg obs ffscreencast unrar tar p7zip p7zip-unrar lm_se
     zathura zathura-pdf-mupdf zathura-cb zathura-djvu zathura-ps sl exa tldr fd duf fzf bat \
     galculator antibody geteltorito grc \
     # Wayland dependencies
-    # xorg-server-xwayland wlroots-devel libinput-devel clipman tofi
+    # xorg-server-xwayland Waybar foot wlroots-devel libinput-devel tofi clipman swaylock swaybg ts
