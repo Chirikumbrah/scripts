@@ -13,13 +13,13 @@ xdg-user-dirs-update
 warpd
 
 # normal cursor
-xsetroot -cursor_name left_ptr
+# xsetroot -cursor_name left_ptr
 
 # turn off PC speaker (loud BEEP)
-xset -b
+# xset -b
 
 # set screen timeout
-xset s off dpms 0 3240 0 
+# xset s off dpms 0 3240 0 
 
 ~/.scripts/system/wayland/clipmenu-daemon.sh &
 
@@ -32,11 +32,11 @@ udiskie -ans &
 # kdeconnect-indicator &
 
 # blueman
-#blueman-applet &
+# blueman-applet &
 
 # authorization window for GUI programs
 # /usr/libexec/polkit-gnome-authentication-agent-1 &
 # lxsession &
 
 # network manager
-nm-applet --indicator &
+nm-applet --indicator & disown
