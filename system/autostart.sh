@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set default apps for mimetypes
-~/.scripts/system/xdg_defaults.sh
+~/.scripts/system/xdg-defaults.sh
 
 # set brightness
 # xbacklight -set 80
