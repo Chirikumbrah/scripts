@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export IMAGE_VIEWER=sxiv
+export IMAGE_VIEWER=nsxiv
 export VIDEO_PLAYER=ffplay
 export BROWSER=chromium
 

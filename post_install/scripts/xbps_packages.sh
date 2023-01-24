@@ -5,7 +5,7 @@ sudo xbps-install -Suy
 sudo xbps-install -Suy ffmpeg obs ffscreencast unrar tar p7zip p7zip-unrar lm_sensors i3lock-color mtools docker tree qt6ct qt5ct \
     lxqt-sudo bind-utils shellcheck cargo udevil jmtpfs ImageMagick usbutils Adapta abiword \
     skype libsecret glow ntfs-3g jq ueberzug gnupg taplo testdisk \
-    pamixer alsa-plugins-pulseaudio kolourpaint perl-rename go feh sxiv \
+    pamixer alsa-plugins-pulseaudio kolourpaint perl-rename go feh nsxiv \
     android-file-transfer-linux neovim ctags libgcc-32bit gimp libstdc++-32bit \
     libdrm-32bit libglvnd-32bit mesa-dri-32bit cronie alsa-utils packer ark automake xkb-switch \
     base-devel android-tools binutils blueman bluez imlib2-devel \
