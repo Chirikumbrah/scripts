@@ -24,7 +24,7 @@ sudo xbps-install -Suy ffmpeg obs ffscreencast unrar tar p7zip p7zip-unrar lm_se
     libgnome-keyring lingot lvm2 SDL2_image libinput-gestures libenet make xcb-util-image-devel xcb-util-image \
     mdadm nano neofetch gstreamer1 libnuma xcb-util-renderutil-devel xcb-util-renderutil \
     papirus-icon-theme xcursor-themes LGOGDownloader clipit gparted picard qimgv telegram-desktop \
-    tlp tlp-rdw transmission-qt udisks2 wget psutils wine wine-32bit wine-gecko mesa-vulkan-intel wine-mono mono winetricks wmctrl xauth xbacklight \
+    tlp tlp-rdw transmission-qt udisks2 wget psutils wine wine-32bit wine-gecko mesa-vulkan-intel intel-video-accel wine-mono mono winetricks wmctrl xauth xbacklight \
     xdo xdotool xkill xorg intel-ucode xorg-input-drivers dmenu j4-dmenu-desktop \
     orage calcurse xorg-video-drivers xz fish-shell starship delta dbus-elogind dbus-elogind-libs dbus-x11 \
     zathura zathura-pdf-mupdf zathura-cb zathura-djvu zathura-ps sl exa tldr fd duf fzf bat \
