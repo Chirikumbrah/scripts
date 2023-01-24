@@ -1,24 +1,25 @@
 #!/bin/env sh
 
 # INIT
-printf "$$" > ~/.cache/pidofbar
+printf '..%s..' "$$" > ~/.cache/pidofbar
 sec=0
 
 # MODULES
 update_cpu () { 
-	cpu="$(grep -o "^[^ ]*" /proc/loadavg )" 
+	TEMP=$(cat /sys/class/thermal/thermal_zone0/temp)
+	cputemp="^c#8be9fd^ $((TEMP / 1000))°C"
 }
 
 update_memory () { 
-	memory="$(free -h | sed -n "2s/\([^ ]* *\)\{2\}\([^ ]*\).*/\2/p")"
+	MEM="$(free -h | awk 'FNR==2{ print $3 }' | tr -d "i")"
+	COLOR="^c#50fa7b^"
+	ICON=""
+
+	memory="$COLOR$ICON $MEM"
 }
 
 update_time () { 
 	time="$(date "+[%a %d %b] [%I:%M %P]")" 
-}
-
-update_weather () { 
-	weather="$(curl -s "wttr.in?format=1"| sed -E "s/^(.).*\+/\1/")" 
 }
 
 update_bat () { 
@@ -29,31 +30,56 @@ update_bat () {
 }
 
 update_vol () { 
-	vol="$([ "$(pamixer --get-mute)" = "false" ] && printf '🔊' || printf '🔇')$(pamixer --get-volume)%"
+	VOL=$(pamixer --get-volume-human | tr -d '%')
+
+	if [ "${VOL}" = "muted" ] || [ "${VOL}" = "0" ]; then
+	    AUDIO=""
+	else
+	    AUDIO=" ${VOL}%"
+	fi
+
+
+	vol="^c#bd93f9^${AUDIO}"
+}
+
+update_mic () {
+	statusLine=$(amixer get Capture | tail -n 1)
+	status=$(echo "${statusLine}" | grep -wo "off")
+	COLOR="^c#FF92DF^"
+
+	if [ "${status}" = "off" ]; then
+	      MIC=""
+	else
+	      MIC=""
+	fi
+
+	mic="$COLOR$MIC"
 }
 
 update_backlight () { 
-	# you might need to change the path depending on your device
-	read -r actual_brightness </sys/class/backlight/intel_backlight/actual_brightness
-	read -r max_brightness </sys/class/backlight/intel_backlight/max_brightness
-	backlight="☀$((actual_brightness*100/max_brightness))%"
+	COLOR="^c#f1fa8c^"
+	ICON=""
+	BRIGHTNESS=$(xbacklight -get | cut -f1 -d'.')
+	backlight="$COLOR$ICON ${BRIGHTNESS}%"
 }
 
 # For calcurse users, refer https://github.com/pystardust/automeet
-update_event () { 
-	event="$(calcurse -n | sed 1d | \
-		sed -E "s_^ *\[(.*):(.*)\] ([^\t]*)\t?.*_[\1h \2m->\3]_")" 
-	[ "[]" = "$event" ] && event=""
-}
+# update_event () { 
+# 	event="$(calcurse -n | sed 1d | \
+# 		sed -E "s_^ *\[(.*):(.*)\] ([^\t]*)\t?.*_[\1h \2m->\3]_")" 
+# 	[ "[]" = "$event" ] && event=""
+# }
 
 
 # modules that don't update on their own need to be run at the start for getting their initial value
+update_mic
 update_vol
 update_backlight
 
 display () { 
 	#printf "%s\n" " $event [$weather] [$memory $cpu] [$bat] [$backlight] [$vol] $time "
-	xsetroot -name " [$weather] [$memory $cpu] [$bat] [$backlight] [$vol] $time "
+  SEP="^c#ffffff^ | "
+	xsetroot -name " $vol$SEP$mic$SEP$backlight$SEP$cputemp$SEP$memory$SEP$bat$SEP$time "
 }
 
 # SIGNALLING
@@ -74,7 +100,6 @@ do
 		[ $((sec % 15)) -eq 0 ] && update_cpu 	# update cpu every 15 seconds
 		[ $((sec % 15)) -eq 0 ] && update_memory
 		[ $((sec % 60)) -eq 0 ] && update_bat
-		[ $((sec % 3600)) -eq 2 ] && update_weather 
 		#[ $((sec % 300)) -eq 1 ] && update_event
 
 		# how often the display updates ( 5 seconds )
