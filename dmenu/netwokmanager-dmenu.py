@@ -1,4 +1,4 @@
- #!/usr/bin/env python3
+#!/usr/bin/env python3
 # encoding:utf8
 """NetworkManager command line dmenu script.
 To add new connections or enable/disable networking requires policykit
