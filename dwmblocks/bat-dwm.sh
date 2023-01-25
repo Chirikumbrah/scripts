@@ -7,25 +7,18 @@ BATTERY_POWER=$(upower -i "$(upower -e | grep 'BAT')" | grep -E "percentage" | a
 
 if [[ "${BATTERY_STATE}" = "pending-charge" ]]; then
     BAT=" ${BATTERY_POWER}%"
-
 elif [[ "${BATTERY_STATE}" = "discharging" && "${BATTERY_POWER}" -gt 80 ]]; then
     BAT=" ${BATTERY_POWER}%"
-
 elif [[ "${BATTERY_STATE}" = "discharging" && "${BATTERY_POWER}" -gt 60 ]]; then
     BAT=" ${BATTERY_POWER}%"
-
 elif [[ "${BATTERY_STATE}" = "discharging" && "${BATTERY_POWER}" -gt 40 ]]; then
     BAT=" ${BATTERY_POWER}%"
-
 elif [[ "${BATTERY_STATE}" = "discharging" && "${BATTERY_POWER}" -gt 20 ]]; then
     BAT=" ${BATTERY_POWER}%"
-
 elif [[ "${BATTERY_STATE}" = "discharging" && "${BATTERY_POWER}" -gt 10 ]]; then
     BAT=" ${BATTERY_POWER}%"
-
 elif [[ "${BATTERY_STATE}" = "discharging" && "${BATTERY_POWER}" -le 10 ]]; then
     BAT=" ${BATTERY_POWER}%"
-
 else
     BAT=" ${BATTERY_POWER}%"
 fi

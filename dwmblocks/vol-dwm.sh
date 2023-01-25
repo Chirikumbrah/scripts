@@ -1,15 +1,7 @@
 #!/bin/bash
 
+COLOR="^c#bd93f9^"
+VOL=$(pamixer --get-volume-human)
+[ "$VOL" = "muted" ] || [ "$VOL" = "0%" ] && ICON="" || ICON=" $VOL"
 
-VOL=$(pamixer --get-volume-human | tr -d '%')
-
-if [ "${VOL}" = "muted" ] || [ "${VOL}" = "0" ]; then
-    AUDIO=""
-else
-    AUDIO=" ${VOL}%"
-fi
-
-
-echo -e "^c#bd93f9^${AUDIO}"
-
-
+echo "$COLOR$ICON"

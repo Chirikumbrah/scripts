@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COLOR=""
+# COLOR=""
 CONNENTION="$(nmcli con show --active | grep -E "wifi|ethernet" | awk '{ print $3 }')"
 
 if [[ "$CONNENTION" = "wifi" ]]; then

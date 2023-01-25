@@ -21,8 +21,8 @@ update_cputemp () {
 
 update_used_ram () { 
 	ICON=""
-	MEM="$(free -h | awk 'FNR==2{ print $3 }' | tr -d "i")"
-	memory="$GREEN$ICON $MEM"
+	RAM="$(free -h | awk 'FNR==2{ print $3 }' | tr -d "i")"
+	memory="$GREEN$ICON $RAM"
 }
 
 update_bat () {
@@ -88,10 +88,10 @@ update_vol () {
 }
 
 update_mic () {
-	statusLine=$(amixer get Capture | tail -n 1)
-	status=$(echo "${statusLine}" | grep -wo "off")
-	[ "$status" = "off" ] && MIC="" || MIC=""
-	mic="$PINK$MIC"
+	STATUS_LINE=$(amixer get Capture | tail -n 1)
+	STATUS=$(echo "${STATUS_LINE}" | grep -wo "off")
+	[ "${STATUS}" = "off" ] && ICON="" || ICON=""
+	mic=$PINK$ICON
 }
 
 update_backlight () { 

@@ -1,13 +1,9 @@
 #!/bin/bash
 
-statusLine=$(amixer get Capture | tail -n 1)
-status=$(echo "${statusLine}" | grep -wo "off")
+STATUS_LINE=$(amixer get Capture | tail -n 1)
+STATUS=$(echo "${STATUS_LINE}" | grep -wo "off")
 COLOR="^c#FF92DF^"
 
-if [[ "${status}" = "off" ]]; then
-      MIC=""
-else
-      MIC=""
-fi
+[ "${STATUS}" = "off" ] && ICON="" || ICON=""
 
-echo "$COLOR$MIC"
+echo "$COLOR$ICON"
