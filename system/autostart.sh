@@ -22,23 +22,19 @@ picom-pijulius                       \
 setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle' -print | xkbcomp - "$DISPLAY" &
 
 # update/create user dirs
-xdg-user-dirs-update
+xdg-user-dirs-update &
 
 # Setup dunst daemon
-DUNST_PID=$(pgrep -x dunst)
-if [ -n "$DUNST_PID" ]; then
-  kill $DUNST_PID
-fi &
-# dunst "$@" &
+kill $(pgrep -x dunst)
 
 # run warpd
 warpd
 
 # normal cursor
-xsetroot -cursor_name left_ptr
+xsetroot -cursor_name left_ptr &
 
 # turn off PC speaker (loud BEEP)
-xset -b
+xset -b &
 
 # set screen timeout
 xset s off dpms 0 3240 0 
@@ -48,6 +44,9 @@ udiskie -ans &
 
 # clipboard management
 clipmenud &
+
+# battery status notifications
+~/.scripts/system/battery-notify.sh &
 
 # kdeconnect daemon
 # /usr/lib64/libexec/kdeconnectd &

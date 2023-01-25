@@ -25,7 +25,7 @@ function mic_notification {
     MIC=$(get_mic_volume)
     BAR=$(seq --separator="━" 0 "$((MIC / 9))" | sed 's/[0-9]//g')
     is_mic_mute && MIC_ICON=$micMuted || MIC_ICON=$micSound
-    dunstify -i "$MIC_ICON" -r 2593 " $BAR" -t 5000
+    dunstify -i "$MIC_ICON" -r 25931 " $BAR" -t 5000
 }
 
 case $1 in
