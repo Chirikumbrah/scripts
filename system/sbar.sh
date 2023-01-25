@@ -1,4 +1,4 @@
-#!/bin/env sh
+#!/bin/bash
 
 # DRACULA COLORS
 ORANGE="^c#ffb86c^"
@@ -26,27 +26,26 @@ update_used_ram () {
 }
 
 update_bat () {
-	BAT_STATE=$(upower -i "$(upower -e | grep 'BAT')" | grep -E "state|to full" | awk '{print $2}')
-	BAT_POWER=$(upower -i "$(upower -e | grep 'BAT')" | grep -E "percentage" | awk '{print $2}' | tr -d '%')
-	if [ "${BAT_STATE}" = "pending-charge" ]; then
-	    ICON=""
-	elif [ "${BAT_STATE}" = "discharging" ] && [ "${BATTERY_POWER}" -gt 80 ]; then
-	    ICON=""
-	elif [ "${BAT_STATE}" = "discharging" ] && [ "${BATTERY_POWER}" -gt 60 ]; then
-	    ICON=""
-	elif [ "${BAT_STATE}" = "discharging" ] && [ "${BATTERY_POWER}" -gt 40 ]; then
-	    ICON=""
-	elif [ "${BAT_STATE}" = "discharging" ] && [ "${BATTERY_POWER}" -gt 20 ]; then
-	    ICON=""
-	elif [ "${BAT_STATE}" = "discharging" ] && [ "${BATTERY_POWER}" -gt 10 ]; then
-	    ICON=""
-	elif [ "${BAT_STATE}" = "discharging" ] && [ "${BATTERY_POWER}" -le 10 ]; then
-	    ICON=""
+	BATTERY_STATE=$(upower -i "$(upower -e | grep 'BAT')" | grep -E "state|to full" | awk '{print $2}')
+	BATTERY_POWER=$(upower -i "$(upower -e | grep 'BAT')" | grep -E "percentage" | awk '{print $2}' | tr -d '%')
+	if [[ "${BATTERY_STATE}" = "pending-charge" ]]; then
+	    BAT=" ${BATTERY_POWER}%"
+	elif [[ "${BATTERY_STATE}" = "discharging" && "${BATTERY_POWER}" -gt 80 ]]; then
+	    BAT=" ${BATTERY_POWER}%"
+	elif [[ "${BATTERY_STATE}" = "discharging" && "${BATTERY_POWER}" -gt 60 ]]; then
+	    BAT=" ${BATTERY_POWER}%"
+	elif [[ "${BATTERY_STATE}" = "discharging" && "${BATTERY_POWER}" -gt 40 ]]; then
+	    BAT=" ${BATTERY_POWER}%"
+	elif [[ "${BATTERY_STATE}" = "discharging" && "${BATTERY_POWER}" -gt 20 ]]; then
+	    BAT=" ${BATTERY_POWER}%"
+	elif [[ "${BATTERY_STATE}" = "discharging" && "${BATTERY_POWER}" -gt 10 ]]; then
+	    BAT=" ${BATTERY_POWER}%"
+	elif [[ "${BATTERY_STATE}" = "discharging" && "${BATTERY_POWER}" -le 10 ]]; then
+	    BAT=" ${BATTERY_POWER}%"
 	else
-	    ICON=""
+	    BAT=" ${BATTERY_POWER}%"
 	fi
-
-	bat="$PINK$ICON $BAT_POWER%"
+	bat="$PINK$BAT"
 }
 
 update_date () { 
@@ -101,18 +100,25 @@ update_backlight () {
 	backlight="$YELLOW$ICON $BRIGHTNESS%"
 }
 
-
-# modules that don't update on their own need to be run at the start for getting their initial value
-update_mic
-update_vol
-update_backlight
-update_kbd
-
 display () { 
 	#printf "%s\n" " $event [$weather] [$memory $cpu] [$bat] [$backlight] [$vol] $time "
   SEP="^c#ffffff^|"
 	xsetroot -name "$vol $SEP $mic $SEP $backlight $SEP $cputemp $SEP $memory $SEP $root_disk $SEP $user_disk $SEP $bat $SEP $date_var $SEP $time $SEP $kbd" &
 }
+
+
+# modules that don't update on their own need to be run at the start for getting their initial value
+update_time 	# update time every 5 seconds
+update_bat
+update_cputemp
+update_used_ram
+update_date 	
+update_vol
+update_mic
+update_disks
+update_backlight
+update_kbd
+display
 
 # SIGNALLING
 # trap	"<function>;display"		"RTMIN+n"
@@ -126,20 +132,22 @@ trap	"update_kbd;display"    		"RTMIN+4"
 
 while true
 do
-	# to update item ever n seconds with a offset of m
-	## [ $((sec % n)) -eq m ] && udpate_item
-	[ $((sec % 5 )) -eq 0 ] && update_time 	# update time every 5 seconds
-	[ $((sec % 5 )) -eq 0 ] && update_bat
-	[ $((sec % 5 )) -eq 0 ] && update_cputemp
-	[ $((sec % 5 )) -eq 0 ] && update_used_ram
-	[ $((sec % 10)) -eq 0 ] && update_date 	
-	[ $((sec % 10)) -eq 0 ] && update_vol
-	[ $((sec % 10)) -eq 0 ] && update_mic
-	[ $((sec % 10)) -eq 0 ] && update_disks
-	#[ $((sec % 300)) -eq 1 ] && update_event
+	sleep 1 & wait && {
+		# to update item ever n seconds with a offset of m
+		## [ $((sec % n)) -eq m ] && udpate_item
+		[ $((sec % 5  )) -eq 0 ] && update_time 	# update time every 5 seconds
+		[ $((sec % 5  )) -eq 0 ] && update_bat
+		[ $((sec % 5  )) -eq 0 ] && update_cputemp
+		[ $((sec % 5  )) -eq 0 ] && update_used_ram
+		[ $((sec % 10 )) -eq 0 ] && update_date 	
+		[ $((sec % 10 )) -eq 0 ] && update_vol
+		[ $((sec % 10 )) -eq 0 ] && update_mic
+		[ $((sec % 10 )) -eq 0 ] && update_disks
+		#[ $((sec % 300)) -eq 1 ] && update_event
 
-	# how often the display updates ( 60 seconds )
-	[ $((sec % 60 )) -eq 0 ] && display
-	sec=$((sec + 1))
+		# how often the display updates ( 5 seconds )
+		[ $((sec % 5 )) -eq 0 ] && display
+		sec=$((sec + 1))
+	}
 done 
 
