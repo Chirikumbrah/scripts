@@ -8,7 +8,7 @@ function volume_notification {
     BAR=$(seq --separator="━" 0 "$(($(pamixer --get-volume) / 5))" | sed 's/[0-9]//g')
 
     [ "$VOL" = "muted" ] || [ "$VOL" = "0%" ]  && VOL_ICON=$volMuted || VOL_ICON=$volSound
-    notify-send -i "$VOL_ICON" -r 2593 " $BAR" -t 5000
+    dunstify -i "$VOL_ICON" -r 2593 " $BAR" -t 5000
 }
 
 function get_mic_volume {
@@ -25,7 +25,7 @@ function mic_notification {
     MIC=$(get_mic_volume)
     BAR=$(seq --separator="━" 0 "$((MIC / 9))" | sed 's/[0-9]//g')
     is_mic_mute && MIC_ICON=$micMuted || MIC_ICON=$micSound
-    notify-send -i "$MIC_ICON" -r 2593 " $BAR" -t 5000
+    dunstify -i "$MIC_ICON" -r 2593 " $BAR" -t 5000
 }
 
 case $1 in
