@@ -43,19 +43,18 @@ case $1 in
         )"
 
         if [ "$SELECTED" = "l" ] || [ "$SELECTED" = "lock" ] || [ "$SELECTED" = "д" ]; then
-            notify-send "locking..." -u low
-            sh "$HOME/.scripts/lock"
+            dunstify -t 1000 "locking..." -u low
             sh "$HOME/.scripts/system/lock.sh"
         elif [ "$SELECTED" = "e" ] || [ "$SELECTED" = "exit" ] || [ "$SELECTED" = "у" ]; then
             dwm=$( ps -o pid,cmd ax | awk '/dwm/{ if ($2 == "dwm") print $1 }' )
-            notify-send "exiting..." -u low
+            dunstify -t 1000 "exiting..." -u low
             [[ -n "$dwm" ]] && kill -s TERM "$dwm"
 
         elif [ "$SELECTED" = "r" ] || [ "$SELECTED" = "reboot" ] || [ "$SELECTED" = "к" ]; then
-            notify-send "rebooting..." -u low
+            dunstify -t 1000 "rebooting..." -u low
             sudo reboot
         elif [ "$SELECTED" = "s" ] || [ "$SELECTED" = "shutdown" ] || [ "$SELECTED" = "ы" ]; then
-            notify-send "shutting down..." -u low
+            dunstify -t 1000 "shutting down..." -u low
             sudo poweroff
         fi
     ;;
