@@ -4,7 +4,7 @@ while true; do
     BATTERY_STATE=$(upower -i "$(upower -e | grep 'BAT')" | grep -E "state|to full" | awk '{print $2}')
     BATTERY_POWER=$(upower -i "$(upower -e | grep 'BAT')" | grep -E "percentage" | awk '{print $2}' | tr -d '%')
     if [[ "$BATTERY_STATE" = "pending-charge" ]]; then
-        dunstify -t 7000 -i /usr/share/icons/ePapirus/32x32/devices/battery.svg -u low "Normal battery level ($BATTERY_POWER%)" "Unplug the charger :)"
+        dunstify -t 7000 -i /usr/share/icons/ePapirus/32x32/devices/battery.svg -u low "Normal battery level ($BATTERY_POWER%)" "You can unplug the charger"
         sleep 5m
     elif [[ "$BATTERY_STATE" = "discharging" && "$BATTERY_POWER" -le 45 && "$BATTERY_POWER" -ge 20 ]]; then
         dunstify -t 7000 -i /usr/share/icons/ePapirus/32x32/devices/battery.svg "Medium battery level ($BATTERY_POWER%)" "Time to plug the charger"
