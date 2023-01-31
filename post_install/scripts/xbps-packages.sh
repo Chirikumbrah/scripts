@@ -29,6 +29,6 @@ sudo xbps-install -Suy ffmpeg obs ffscreencast unrar tar p7zip p7zip-unrar lm_se
     xdo xdotool xkill xorg intel-ucode xorg-input-drivers dmenu j4-dmenu-desktop \
     orage calcurse xorg-video-drivers xz fish-shell starship delta dbus-elogind dbus-elogind-libs dbus-x11 \
     zathura zathura-pdf-mupdf zathura-cb zathura-djvu zathura-ps sl exa tldr fd duf fzf bat \
-    galculator geteltorito grc zoxide pycp
+    galculator geteltorito grc zoxide pycp flatpak
     # Wayland dependencies
     # xorg-server-xwayland Waybar foot wlroots-devel libinput-devel bemenu clipman swaylock swaybg ts
