@@ -14,6 +14,7 @@ sudo xbps-install -Suy ffmpeg obs ffscreencast unrar tar p7zip p7zip-unrar lm_se
     font-fantasque-sans-ttf terminus-font font-material-design-icons-ttf ttf-material-icons \
     font-adobe-utopia-100dpi font-adobe-utopia-75dpi font-misc-misc terminus-font noto-fonts-ttf-extra noto-fonts-emoji \
     font-adobe-100dpi font-adobe-75dpi dejavu-fonts-ttf noto-fonts-cjk noto-fonts-ttf nerd-fonts \
+    # other
     cmake xdg-utils xdg-user-dirs libqtxdg libcanberra clang lua-language-server \
     curl audacious audacious-plugins gtk+-devel gtk+3-devel net-tools network-manager-applet NetworkManager-openvpn \
     firefox chromium flameshot scrot python-devel python3-devel python3-pip \
@@ -28,6 +29,6 @@ sudo xbps-install -Suy ffmpeg obs ffscreencast unrar tar p7zip p7zip-unrar lm_se
     xdo xdotool xkill xorg intel-ucode xorg-input-drivers dmenu j4-dmenu-desktop \
     orage calcurse xorg-video-drivers xz fish-shell starship delta dbus-elogind dbus-elogind-libs dbus-x11 \
     zathura zathura-pdf-mupdf zathura-cb zathura-djvu zathura-ps sl exa tldr fd duf fzf bat \
-    galculator antibody geteltorito grc zoxide
+    galculator geteltorito grc zoxide pycp
     # Wayland dependencies
     # xorg-server-xwayland Waybar foot wlroots-devel libinput-devel bemenu clipman swaylock swaybg ts
