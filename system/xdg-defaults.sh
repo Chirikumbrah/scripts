@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export IMAGE_VIEWER=nsxiv
-export VIDEO_PLAYER=ffplay
+export VIDEO_PLAYER=mpv
 export BROWSER=chromium
 
 # img/vid
@@ -11,7 +11,8 @@ xdg-mime default $IMAGE_VIEWER.desktop 'image/png'
 xdg-mime default $IMAGE_VIEWER.desktop 'image/gif'
 xdg-mime default $IMAGE_VIEWER.desktop 'image/pjpeg'
 xdg-mime default $IMAGE_VIEWER.desktop 'image/tiff'
-xdg-mime default $VIDEO_PLAYER.desktop 'image/mp4'
+xdg-mime default $VIDEO_PLAYER.desktop 'video/mp4'
+xdg-mime default $VIDEO_PLAYER.desktop 'video/x-matroska'
 
 # browser
 xdg-mime default $BROWSER.desktop 'x-scheme-handler/http'
