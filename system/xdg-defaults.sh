@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export IMAGE_VIEWER=nsxiv
+export PDF_VIEWER=org.pwmt.zathura
 export VIDEO_PLAYER=mpv
 export BROWSER=chromium
 
@@ -29,3 +30,5 @@ xdg-mime default $BROWSER.desktop 'x-scheme-handler/http'
 xdg-mime default $BROWSER.desktop 'x-scheme-handler/https'
 xdg-mime default $BROWSER.desktop 'text/html'
 
+# documents
+xdg-mime default $PDF_VIEWER.desktop 'application/pdf'
