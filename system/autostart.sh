@@ -53,7 +53,7 @@ clipmenud &
 # kdeconnect-indicator &
 
 # blueman
-#blueman-applet &
+blueman-applet &
 
 # authorization window for GUI programs
 # /usr/libexec/polkit-gnome-authentication-agent-1 &
