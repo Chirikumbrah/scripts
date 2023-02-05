@@ -2,15 +2,17 @@
 
 sudo cp -r ./files/* /
 
-sh ./scripts/xbps_packages.sh
-sh ./scripts/pip_packages.sh
-sh ./scripts/npm_packages.sh
-sh ./scripts/zsh_install.sh
-# fish ./scripts/fish_install.fish
-sh ./scripts/llama_installing.sh
-sh ./scripts/picom_installing.sh.sh
-sh ./scripts/warpd_installing.sh
-sh ./scripts/solving_unknown_key_zoom.sh
-sh ./scripts/set_explorer.sh
-sh ./scripts/wine_fonts/winefontssmoothing.sh
-sh ./scripts/wine_fonts/winefontssmoothing_en.sh
+sh ./scripts/xbps-packages.sh
+sh ./scripts/pip-packages.sh
+sh ./scripts/npm-packages.sh
+sh ./scripts/flatpak-packages.sh
+sh ./scripts/flatpak-override-fs.sh
+# sh ./scripts/zsh-install.sh
+sh ./scripts/fish-install.fish
+sh ./scripts/llama-installing.sh
+sh ./scripts/picom-installing.sh.sh
+sh ./scripts/warpd-installing.sh
+sh ./scripts/solving-unknown-key-zoom.sh
+sh ./scripts/set-explorer.sh
+sh ./scripts/wine-fonts/winefontssmoothing.sh
+sh ./scripts/wine-fonts/winefontssmoothing-en.sh
