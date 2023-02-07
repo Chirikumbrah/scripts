@@ -5,10 +5,13 @@ sudo xbps-install -Suy
 sudo xbps-install -Suy ffmpeg obs ffscreencast unrar tar p7zip p7zip-unrar lm_sensors i3lock-color mtools docker tree qt6ct qt5ct \
     lxqt-sudo bind-utils shellcheck cargo udevil jmtpfs ImageMagick usbutils Adapta abiword \
     skype libsecret glow ntfs-3g jq ueberzug gnupg taplo testdisk \
-    pamixer alsa-lib alsa-lib-devel alsa-plugins alsa-tools alsa-utils alsa-plugins-pulseaudio kolourpaint perl-rename go feh nsxiv \
+    pamixer kolourpaint perl-rename go feh nsxiv \
     android-file-transfer-linux neovim ctags libgcc-32bit gimp libstdc++-32bit \
     libdrm-32bit libglvnd-32bit mesa-dri-32bit cronie packer ark automake xkb-switch \
     base-devel android-tools binutils blueman bluez imlib2-devel \
+    # audio
+    alsa-lib alsa-lib-devel alsa-plugins alsa-tools alsa-plugins-pulseaudio \
+    qjackctl pipewire alsa-pipewire alsa-utils \
     sysstat bluez-alsa breeze-cursors calligra-sheets trash-cli \
     # fonts
     font-fantasque-sans-ttf terminus-font font-material-design-icons-ttf ttf-material-icons \

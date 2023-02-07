@@ -4,10 +4,11 @@ function volume_notification {
     volMuted="/usr/share/icons/Papirus-Dark/16x16/panel/volume-level-muted.svg"
     volSound="/usr/share/icons/Papirus-Dark/16x16/panel/volume-level-high.svg"
 
-    VOL=$(pamixer --get-volume-human)
-    BAR=$(seq --separator="━" 0 "$(($(pamixer --get-volume) / 5))" | sed 's/[0-9]//g')
+    VOL=$(amixer -c 0 get Master | tail -1 | awk '{print $4}' | sed 's/[^0-9]*//g')
+    STATE=$(amixer -c 0 get Master | tail -1 | awk '{print $6}' | sed 's/[^a-z]*//g')
+    BAR=$(seq --separator="━" 0 "$((VOL / 5))" | sed 's/[0-9]//g')
 
-    [ "$VOL" = "muted" ] || [ "$VOL" = "0%" ]  && VOL_ICON=$volMuted || VOL_ICON=$volSound
+    [ "$STATE" = "off" ] || [ "$VOL" = "0" ]  && VOL_ICON=$volMuted || VOL_ICON=$volSound
     dunstify -i "$VOL_ICON" -r 2593 " $BAR" -t 5000
 }
 
