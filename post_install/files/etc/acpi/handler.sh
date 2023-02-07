@@ -24,24 +24,24 @@ case "$1" in
         case "$2" in
             PBTN|PWRF)
                 logger "PowerButton pressed: $2, shutting down..."
-                shutdown -P now
+                poweroff
                 ;;
             *)  logger "ACPI action undefined: $2" ;;
         esac
         ;;
-    button/sleep)
-        case "$2" in
-            SBTN|SLPB)
-                # suspend-to-ram
-                logger "Sleep Button pressed: $2, suspending..."
-                # USER=$(ps -C i3 -o user=)
-                USER="yr"
-                if test $USER; then DISPLAY=:0.0 su $USER -c "/home/yr/.scripts/system/lock.sh"; fi
-                # zzz
-                ;;
-            *)  logger "ACPI action undefined: $2" ;;
-        esac
-        ;;
+    # button/sleep)
+    #     case "$2" in
+    #         SBTN|SLPB)
+    #             # suspend-to-ram
+    #             logger "Sleep Button pressed: $2, suspending..."
+    #             # USER=$(ps -C i3 -o user=)
+    #             USER="yr"
+    #             if test $USER; then DISPLAY=:0.0 su $USER -c "/home/yr/.scripts/system/lock.sh"; fi
+    #             # zzz
+    #             ;;
+    #         *)  logger "ACPI action undefined: $2" ;;
+    #     esac
+    #     ;;
     ac_adapter)
         case "$2" in
             AC|ACAD|ADP0)

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Uninstall
+Exec=env WINEPREFIX="/home/yr/.wine" wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\Guitar\\ Pro\\ 7\\\\Uninstall.lnk
+Type=Application
+StartupNotify=true
+Path=/home/yr/.wine/dosdevices/c:/Program Files (x86)/Arobas Music/Guitar Pro 7
+Icon=B69F_unins000.0
+StartupWMClass=unins000.exe

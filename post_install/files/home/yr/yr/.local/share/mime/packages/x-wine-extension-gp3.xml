@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-wine-extension-gp3">
+    <glob pattern="*.gp3"/>
+    <comment>Guitar Pro 3 Tablature</comment>
+  </mime-type>
+</mime-info>

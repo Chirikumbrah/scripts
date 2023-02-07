@@ -1,0 +1,14 @@
+
+[alsa]
+mixer-element=Master
+
+[audacious]
+generic_title_format=${?artist:${artist} - }${title}
+show_interface=TRUE
+
+[audgui]
+info_win=729,274,548,391
+
+[qtui]
+player_height=725
+player_width=597
