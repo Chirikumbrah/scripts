@@ -18,4 +18,5 @@ sh ./scripts/wine-fonts/winefontssmoothing.sh
 sh ./scripts/wine-fonts/winefontssmoothing-en.sh
 sh ./scripts/adding-runit-daemons.sh
 sh ./scripts/qt-heif-image-plugin.sh
+sh ./scripts/setup-audio.sh
 # sh ./scripts/setup-seatd.sh
