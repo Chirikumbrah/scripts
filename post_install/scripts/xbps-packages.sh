@@ -73,4 +73,5 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree qt6ct qt5ct \
     sl exa tldr fd duf fzf bat \
     galculator geteltorito grc zoxide pycp flatpak
     # Wayland dependencies
-    # xorg-server-xwayland Waybar foot wlroots-devel bemenu clipman swaylock swaybg ts
+    # xorg-server-xwayland Waybar foot wlroots-devel bemenu swaylock swaybg ts \
+    # clipman wl-clipboard wlsunset 
