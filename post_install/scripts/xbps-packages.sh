@@ -32,7 +32,7 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     # android
     android-file-transfer-linux android-tools jmtpfs \
     # bluetooth
-    blueman bluez bluez-alsa \
+    blueman bluez bluez-alsa libspa-bluetooth \
     # text editors
     neovim helix \
     # documents

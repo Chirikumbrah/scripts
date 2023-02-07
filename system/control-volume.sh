@@ -3,12 +3,9 @@
 function volume_notification {
     volMuted="/usr/share/icons/Papirus-Dark/16x16/panel/volume-level-muted.svg"
     volSound="/usr/share/icons/Papirus-Dark/16x16/panel/volume-level-high.svg"
-
-    VOL=$(amixer -c 0 get Master | tail -1 | awk '{print $4}' | sed 's/[^0-9]*//g')
-    STATE=$(amixer -c 0 get Master | tail -1 | awk '{print $6}' | sed 's/[^a-z]*//g')
-    BAR=$(seq --separator="━" 0 "$((VOL / 5))" | sed 's/[0-9]//g')
-
-    [ "$STATE" = "off" ] || [ "$VOL" = "0" ]  && VOL_ICON=$volMuted || VOL_ICON=$volSound
+    VOL=$(pamixer --get-volume-human)
+    BAR=$(seq --separator="━" 0 "$(($(pamixer --get-volume) / 5))" | sed 's/[0-9]//g')
+    [ "$VOL" = "muted" ] || [ "$VOL" = "0%" ]  && VOL_ICON=$volMuted || VOL_ICON=$volSound
     dunstify -i "$VOL_ICON" -r 2593 " $BAR" -t 5000
 }
 
@@ -23,27 +20,27 @@ function is_mic_mute {
 function mic_notification {
     micMuted="/usr/share/icons/Papirus-Dark/16x16/panel/mic-off.svg"
     micSound="/usr/share/icons/Papirus-Dark/16x16/panel/mic-on.svg"
-    MIC=$(get_mic_volume)
-    BAR=$(seq --separator="━" 0 "$((MIC / 9))" | sed 's/[0-9]//g')
-    is_mic_mute && MIC_ICON=$micMuted || MIC_ICON=$micSound
+    MIC=$(pamixer --default-source --get-volume-human)
+    BAR=$(seq --separator="━" 0 "$(($(pamixer --default-source --get-volume) / 9))" | sed 's/[0-9]//g')
+    [ "$MIC" = "muted" ] || [ "$MIC" = "0%" ] && MIC_ICON=$micMuted || MIC_ICON=$micSound
     dunstify -i "$MIC_ICON" -r 25931 " $BAR" -t 5000
 }
 
 case $1 in
     up)
-        amixer set Master 5%+
+        pamixer -i 5
         volume_notification &
         ;;
     down)
-        amixer set Master 5%-
+        pamixer -d 5
         volume_notification &
         ;;
     mute)
-        amixer set Master toggle
+        pamixer -t
         volume_notification &
         ;;
     mic)
-        amixer set Capture toggle
+        pamixer --default-source -t
         mic_notification &
         ;;
 esac

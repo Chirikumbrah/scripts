@@ -1,9 +1,8 @@
 #!/bin/bash
 
-STATUS_LINE=$(amixer get Capture | tail -n 1)
-STATUS=$(echo "${STATUS_LINE}" | grep -wo "off")
+MIC=$(pamixer --default-source --get-volume-human)
 COLOR="^c#FF92DF^"
 
-[ "${STATUS}" = "off" ] && ICON="" || ICON=""
+[ "$MIC" = "muted" ] && ICON="" || ICON=""
 
 echo "$COLOR$ICON"
