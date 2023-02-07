@@ -9,7 +9,7 @@ sudo cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
 sudo sed -i 's|https://alpha.de.repo.voidlinux.org|<repository>|g' /etc/xbps.d/*-repository-*.conf
 sudo xbps-install -S
 
-sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree qt6ct qt5ct \
+sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     lxqt-sudo bind-utils shellcheck cargo udevil usbutils Adapta \
     skype libsecret glow ntfs-3g jq ueberzug gnupg taplo testdisk \
     kolourpaint perl-rename go \
@@ -18,6 +18,8 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree qt6ct qt5ct \
     base-devel binutils imlib2-devel \
     # base
     git wget curl \
+    # qt dependencies
+    qt6ct qt5ct qt5-devel libheic-devel \
     # xdg packages
     xdg-utils xdg-user-dirs \
     # drivers
