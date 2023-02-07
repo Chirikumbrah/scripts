@@ -1,7 +1,14 @@
 #!/bin/bash
 
-sudo xbps-install -Suy void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree
-sudo xbps-install -Suy
+# Adding repositories
+sudo xbps-install -Sy void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree
+
+# Changing mirrors
+sudo mkdir -p /etc/xbps.d
+sudo cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
+sudo sed -i 's|https://alpha.de.repo.voidlinux.org|<repository>|g' /etc/xbps.d/*-repository-*.conf
+sudo xbps-install -S
+
 sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree qt6ct qt5ct \
     lxqt-sudo bind-utils shellcheck cargo udevil usbutils Adapta \
     skype libsecret glow ntfs-3g jq ueberzug gnupg taplo testdisk \
@@ -11,6 +18,8 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree qt6ct qt5ct \
     base-devel binutils imlib2-devel \
     # base
     git wget curl \
+    # xdg packages
+    xdg-utils xdg-user-dirs \
     # drivers
     intel-video-accel intel-ucode \
     xorg-video-drivers xorg-input-drivers \
@@ -51,7 +60,7 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree qt6ct qt5ct \
 
     # other
     sysstat trash-cli \
-    cmake xdg-utils xdg-user-dirs libqtxdg libcanberra clang lua-language-server \
+    cmake libqtxdg libcanberra clang lua-language-server \
     flameshot audacious audacious-plugins gtk+-devel gtk+3-devel net-tools network-manager-applet NetworkManager-openvpn \
     gnome-keyring cairo-devel gtick gvfs-afc gvfs-mtp gvfs-smb uthash \
     htop kdeconnect keepassxc libev libev-devel meson ninja \
