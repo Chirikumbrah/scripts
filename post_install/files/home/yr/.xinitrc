@@ -14,11 +14,6 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 # Setup autostart
 ~/.scripts/system/autostart.sh &
 
-# audio
-pipewire &
-pipewire-pulse &
-wireplumber &
-
 # start dwm
 # exec "$HOME/.scripts/system/sbar.sh" &
 exec dwmblocks &

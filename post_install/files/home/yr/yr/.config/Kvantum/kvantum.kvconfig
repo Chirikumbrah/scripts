@@ -1,6 +1,0 @@
-[General]
-theme=KvArcDark
-
-[Applications]
-Default=keepassxc
-KvArcDark=keepassxc
