@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export IMAGE_VIEWER=nsxiv
+export IMAGE_VIEWER=qimgv
 export PDF_VIEWER=org.pwmt.zathura
 export VIDEO_PLAYER=mpv
 export BROWSER=chromium
