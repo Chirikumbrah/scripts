@@ -62,3 +62,6 @@ clipmenud &
 # network manager
 nm-applet &
 
+# nextcloud client
+nextcloud --background &
+
