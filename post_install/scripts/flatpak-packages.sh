@@ -3,4 +3,5 @@
 flatpak install com.discordapp.Discord \
       com.notesnook.Notesnook \
       net.jami.Jami \
-      org.localsend.localsend_app
+      org.localsend.localsend_app \
+      net.cozic.joplin_desktop
