@@ -59,8 +59,6 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     python-devel python3-devel python3-pip \
     # wine
     wine wine-32bit wine-gecko wine-mono mono winetricks \
-    # user apps
-
     # other
     sysstat trash-cli \
     cmake libqtxdg libcanberra clang lua-language-server \
