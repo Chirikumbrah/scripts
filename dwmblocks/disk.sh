@@ -7,7 +7,7 @@ USER_SIGN="~"
 
 case $1 in
   -u)
-    DIR=/home/yr/yrData
+    DIR=/home/yr/.yrdata
     LABEL="$PURPLE$USER_SIGN"
     ;;
   -r)
