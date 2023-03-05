@@ -18,51 +18,53 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     base-devel binutils imlib2-devel \
     # base
     git wget curl ngetty \
-    # qt dependencies
+# network
+    net-tools network-manager-applet NetworkManager-openvpn \
+# qt dependencies
     qt6ct qt5ct qt5-devel libheic-devel \
-    # xdg packages
+# xdg packages
     xdg-utils xdg-user-dirs \
     xdg-desktop-portal-gtk \
-    # drivers
+# drivers
     intel-video-accel intel-ucode \
     xorg-video-drivers xorg-input-drivers \
     mesa-vulkan-intel mesa-dri-32bit \
     libinput-devel libinput-gestures \
-    # archives
+# archives
     unrar tar p7zip p7zip-unrar \
-    # android
+# android
     android-file-transfer-linux android-tools jmtpfs \
-    # bluetooth
+# bluetooth
     blueman bluez bluez-alsa libspa-bluetooth \
-    # text editors
+# text editors
     neovim helix \
-    # documents
+# documents
     libreoffice zathura zathura-pdf-mupdf zathura-cb zathura-djvu zathura-ps \
     nextcloud-client \
-    # web
+# web
     firefox chromium qbittorrent \
-    # pictures
+# pictures
     ImageMagick qimgv feh nsxiv \
-    # video
+# video
     mpv obs \
-    # audio
+# audio
     alsa-pipewire pipewire pipewire-devel rtkit qjackctl libjack-pipewire wireplumber wireplumber-devel gstreamer1-pipewire \
-    # fonts
+# fonts
     font-fantasque-sans-ttf terminus-font font-material-design-icons-ttf ttf-material-icons \
     font-adobe-utopia-100dpi font-adobe-utopia-75dpi font-misc-misc terminus-font noto-fonts-ttf-extra noto-fonts-emoji \
     font-adobe-100dpi font-adobe-75dpi dejavu-fonts-ttf noto-fonts-cjk noto-fonts-ttf nerd-fonts \
-    # themes
+# themes
     papirus-icon-theme breeze-cursors xcursor-themes \
-    # X11 dependencies
+# X11 dependencies
     libXtst-devel libXi-devel libX11-devel libXft-devel libXinerama-devel libXfixes-devel \
-    # python
+# python
     python-devel python3-devel python3-pip \
-    # wine
+# wine
     wine wine-32bit wine-gecko wine-mono mono winetricks \
-    # other
+# other
     sysstat trash-cli \
     cmake libqtxdg libcanberra clang lua-language-server \
-    flameshot audacious audacious-plugins gtk+-devel gtk+3-devel net-tools network-manager-applet NetworkManager-openvpn \
+    flameshot audacious audacious-plugins gtk+-devel gtk+3-devel \
     gnome-keyring cairo-devel gtick gvfs-afc gvfs-mtp gvfs-smb uthash \
     htop kdeconnect keepassxc libev libev-devel meson ninja \
     libgnome-keyring lingot lvm2 SDL2_image libenet make xcb-util-image-devel xcb-util-image \
@@ -73,7 +75,7 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     orage calcurse xz fish-shell starship delta dbus-elogind dbus-elogind-libs dbus-x11 \
     sl exa tldr fd duf fzf bat \
     galculator geteltorito grc zoxide pycp flatpak
-    # Wayland dependencies
+# Wayland dependencies
     # xorg-server-xwayland Waybar foot wlroots-devel bemenu swaylock swaybg ts \
     # fmt-devel spdlog gtkmm-devel libdbusmenu-gtk3-devel jsoncpp-devel \
     # clipman wl-clipboard wlsunset 

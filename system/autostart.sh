@@ -60,7 +60,7 @@ clipmenud &
 # lxsession &
 
 # network manager
-nm-applet &
+nm-applet --indicator &
 
 # nextcloud client
 nextcloud --background &
