@@ -4,9 +4,11 @@ function volume_notification {
     volMuted="/usr/share/icons/Papirus-Dark/16x16/panel/volume-level-muted.svg"
     volSound="/usr/share/icons/Papirus-Dark/16x16/panel/volume-level-high.svg"
     VOL=$(pamixer --get-volume-human)
-    BAR=$(seq --separator="━" 0 "$(($(pamixer --get-volume) / 5))" | sed 's/[0-9]//g')
+    VOL_LEVEL=$(pamixer --get-volume)
+    # BAR=$(seq --separator="━" 0 "$(($(pamixer --get-volume) / 5))" | sed 's/[0-9]//g')
     [ "$VOL" = "muted" ] || [ "$VOL" = "0%" ]  && VOL_ICON=$volMuted || VOL_ICON=$volSound
-    dunstify -i "$VOL_ICON" -r 2593 " $BAR" -t 5000
+    # dunstify -i "$VOL_ICON" -r 2593 " $BAR" -t 5000
+    dunstify -i "$VOL_ICON" -r 2593 -h int:value:"$VOL_LEVEL" " Volume: $VOL_LEVEL%" -t 5000
 }
 
 function get_mic_volume {
@@ -21,9 +23,10 @@ function mic_notification {
     micMuted="/usr/share/icons/Papirus-Dark/16x16/panel/mic-off.svg"
     micSound="/usr/share/icons/Papirus-Dark/16x16/panel/mic-on.svg"
     MIC=$(pamixer --default-source --get-volume-human)
-    BAR=$(seq --separator="━" 0 "$(($(pamixer --default-source --get-volume) / 9))" | sed 's/[0-9]//g')
+    MIC_LEVEL=$(pamixer --default-source --get-volume)
+    # BAR=$(seq --separator="━" 0 "$(($(pamixer --default-source --get-volume) / 9))" | sed 's/[0-9]//g')
     [ "$MIC" = "muted" ] || [ "$MIC" = "0%" ] && MIC_ICON=$micMuted || MIC_ICON=$micSound
-    dunstify -i "$MIC_ICON" -r 25931 " $BAR" -t 5000
+    dunstify -i "$MIC_ICON" -r 25931 -h int:value:"$MIC_LEVEL" " Microphone: $MIC_LEVEL%" -t 5000
 }
 
 case $1 in
