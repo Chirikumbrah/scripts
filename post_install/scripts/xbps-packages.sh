@@ -1,13 +1,16 @@
 #!/bin/bash
 
+# Changing mirrors MANUAL
+# sudo mkdir -p /etc/xbps.d
+# sudo cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
+# sudo sed -i 's|https://repo-default.voidlinux.org|<repository>|g' /etc/xbps.d/*-repository-*.conf
+
+# Changing mirrors INTERACTIVE
+sudo xbps-install -S xmirror
+sudo xmirror
+
 # Adding repositories
 sudo xbps-install -Sy void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree
-
-# Changing mirrors
-sudo mkdir -p /etc/xbps.d
-sudo cp /usr/share/xbps.d/*-repository-*.conf /etc/xbps.d/
-sudo sed -i 's|https://alpha.de.repo.voidlinux.org|<repository>|g' /etc/xbps.d/*-repository-*.conf
-sudo xbps-install -S
 
 sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     lxqt-sudo bind-utils shellcheck cargo udevil usbutils Adapta \
@@ -16,10 +19,11 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     ctags libgcc-32bit gimp libstdc++-32bit \
     libdrm-32bit libglvnd-32bit cronie packer ark automake xkb-switch \
     base-devel binutils imlib2-devel \
-    # base
+# base
     git wget curl ngetty \
 # network
-    net-tools network-manager-applet NetworkManager-openvpn \
+    net-tools iwd openresolv openvpn \
+    # network-manager-applet NetworkManager-openvpn
 # qt dependencies
     qt6ct qt5ct qt5-devel libheic-devel \
 # xdg packages
