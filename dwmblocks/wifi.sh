@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COLOR="^c#FF92DF^"
+COLOR="^c#ffb86c^"
 WIRELESS="wlp5s0"
 MODEM="enp0s"
 ETHERNET="enp3s0"
