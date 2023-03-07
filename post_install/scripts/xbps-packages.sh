@@ -43,7 +43,7 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
 # text editors
     neovim helix \
 # documents
-    libreoffice zathura zathura-pdf-mupdf zathura-cb zathura-djvu zathura-ps \
+    libreoffice qpdfview \
     nextcloud-client \
 # web
     firefox chromium qbittorrent \
