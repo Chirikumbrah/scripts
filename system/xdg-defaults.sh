@@ -4,6 +4,7 @@ export IMAGE_VIEWER=qimgv
 export PDF_VIEWER=org.pwmt.zathura
 export VIDEO_PLAYER=mpv
 export BROWSER=chromium
+export EXPLORER=pcmanfm-qt
 
 # img/vid
 xdg-mime default $IMAGE_VIEWER.desktop 'image/jpg'
@@ -32,3 +33,7 @@ xdg-mime default $BROWSER.desktop 'text/html'
 
 # documents
 xdg-mime default $PDF_VIEWER.desktop 'application/pdf'
+
+# file explorer
+xdg-mime default $EXPLORER.desktop 'inode/directory'
+
