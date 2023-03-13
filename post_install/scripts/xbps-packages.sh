@@ -20,10 +20,11 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     libdrm-32bit libglvnd-32bit cronie packer ark automake xkb-switch \
     base-devel binutils imlib2-devel \
 # base
-    git wget curl ngetty \
+    git wget curl \
 # network
-    net-tools iwd openresolv qomui \
-    # network-manager-applet NetworkManager-openvpn
+    # net-tools
+    # iwd openresolv \
+    network-manager-applet NetworkManager-openvpn \
 # qt dependencies
     qt6ct qt5ct qt5-devel libheic-devel \
 # xdg packages
