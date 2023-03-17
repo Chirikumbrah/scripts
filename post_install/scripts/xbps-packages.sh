@@ -84,3 +84,5 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     # xorg-server-xwayland Waybar foot wlroots-devel bemenu swaylock swaybg ts \
     # fmt-devel spdlog gtkmm-devel libdbusmenu-gtk3-devel jsoncpp-devel \
     # clipman wl-clipboard wlsunset 
+
+sudo vkpurge rm all
