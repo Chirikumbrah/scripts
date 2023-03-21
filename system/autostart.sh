@@ -7,16 +7,13 @@
 # xbacklight -set 80
 
 # desktop effects
-picom-pijulius                       \
-     -fb                             \
-    --animations                     \
-    --animation-window-mass 0.5      \
-    --animation-for-open-window zoom \
-    --animation-stiffness 350        \
-    --backend xr_glx_hybrid
-    # --experimental-backends          
-    # --backend glx
-    # --backend xrender
+picom-ft-labs                             \
+     -fb                                  \
+     --animations                         \
+     --animation-window-mass 0.5          \
+     --animation-for-open-window zoom     \
+     --animation-stiffness-in-tag 350     \
+     --animation-stiffness-tag-change 350 
 
 # keyboard layouts
 setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle' -print | xkbcomp - "$DISPLAY" &
