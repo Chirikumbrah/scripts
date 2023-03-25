@@ -1,10 +1,10 @@
 #!/bin/bash
 
-FILE="$HOME/llama"
+LINK="https://github.com/antonmedv/llama/releases/download/v1.4.0/llama_linux_amd64"
+BINARY="/tmp/llama"
 TARGET="/usr/local/bin/"
 
-wget https://github.com/antonmedv/llama/releases/download/v1.2.0/llama_linux_amd64 \
-     -O "$FILE"
-chmod +x "$FILE"
+wget "$LINK" -O "$BINARY"
+chmod +x "$BINARY"
 sudo mkdir -p "$TARGET"
-sudo mv "$FILE" "$TARGET"
+sudo mv "$BINARY" "$TARGET"

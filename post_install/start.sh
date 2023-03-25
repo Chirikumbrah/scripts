@@ -11,6 +11,7 @@ sh ./scripts/flatpak-override-fs.sh
 # sh ./scripts/zsh-install.sh
 sh ./scripts/fish-install.fish
 sh ./scripts/llama-installing.sh
+sh ./scripts/terraform-installing.sh
 sh ./scripts/picom-installing.sh.sh
 sh ./scripts/warpd-installing.sh
 sh ./scripts/solving-unknown-key-zoom.sh
