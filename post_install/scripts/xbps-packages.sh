@@ -25,6 +25,7 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     # net-tools
     # iwd openresolv \
     network-manager-applet NetworkManager-openvpn \
+    nmap     \
 # qt dependencies
     qt6ct qt5ct qt5-devel libheic-devel \
 # xdg packages
