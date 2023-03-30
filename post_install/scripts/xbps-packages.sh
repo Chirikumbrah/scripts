@@ -78,7 +78,7 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     LGOGDownloader clipit gparted picard telegram-desktop \
     tlp tlp-rdw udisks2 psutils wmctrl xauth xbacklight \
     xdo xdotool xkill xorg dmenu j4-dmenu-desktop \
-    orage calcurse xz fish-shell starship delta dbus-elogind dbus-elogind-libs dbus-x11 \
+    orage orage xz fish-shell starship delta dbus-elogind dbus-elogind-libs dbus-x11 \
     sl exa tldr fd duf fzf bat tmux \
     galculator geteltorito grc zoxide pycp flatpak
 # Wayland dependencies
