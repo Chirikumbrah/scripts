@@ -14,7 +14,7 @@ sudo xbps-install -Sy void-repo-multilib void-repo-multilib-nonfree void-repo-no
 
 sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     lxqt-sudo bind-utils shellcheck cargo udevil usbutils Adapta \
-    skype libsecret glow ntfs-3g jq ueberzug gnupg taplo testdisk \
+    skype libsecret glow ntfs-3g jq ueberzug gnupg testdisk \
     kolourpaint perl-rename go \
     ctags libgcc-32bit gimp libstdc++-32bit \
     libdrm-32bit libglvnd-32bit cronie packer ark automake xkb-switch \
@@ -68,9 +68,12 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     python-devel python3-devel python3-pip \
 # wine
     libwine libwine-32bit wine wine-32bit wine-mono mono winetricks \
+# language servers
+    # taplo \
+    clang lua-language-server \
 # other
     sysstat trash-cli \
-    cmake libqtxdg libcanberra clang lua-language-server \
+    cmake libqtxdg libcanberra \
     flameshot audacious audacious-plugins gtk+-devel gtk+3-devel \
     gnome-keyring cairo-devel gtick gvfs-afc gvfs-mtp gvfs-smb uthash \
     htop kdeconnect keepassxc libev libev-devel meson ninja \
