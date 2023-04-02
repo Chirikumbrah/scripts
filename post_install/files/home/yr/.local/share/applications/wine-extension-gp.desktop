@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Guitar Pro 7
-MimeType=application/x-gnuplot;
-Exec=env WINEPREFIX="/home/yr/.wine" wine start /ProgIDOpen Guitar\\ Pro\\ 7.AssocFile.gp %f
-NoDisplay=true
-StartupNotify=true
-Icon=2658_GuitarPro7.0

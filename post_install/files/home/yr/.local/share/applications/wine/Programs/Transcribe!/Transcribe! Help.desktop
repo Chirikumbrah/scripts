@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Transcribe! Help
-Exec=env WINEPREFIX="/home/yr/.wine" wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\Transcribe!\\\\Transcribe!\\ Help.lnk
-Type=Application
-StartupNotify=true
-Path=/home/yr/.wine/dosdevices/c:/Program Files (x86)/Transcribe!
-Icon=0D45_xschelp.0
-StartupWMClass=xschelp.chm

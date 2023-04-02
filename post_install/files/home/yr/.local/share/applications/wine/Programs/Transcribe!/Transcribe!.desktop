@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Transcribe!
-Exec=env WINEPREFIX="/home/yr/.wine" wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\Transcribe!\\\\Transcribe!.lnk
-Type=Application
-StartupNotify=true
-Path=/home/yr/.wine/dosdevices/c:/Program Files (x86)/Transcribe!
-Icon=B66B_Transcribe.0
-StartupWMClass=transcribe.exe
