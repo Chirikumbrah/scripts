@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# FONT="DejaVuSansMono,10.5" # bemenu
 FONT="DejaVuSansMono:size=10" # dwm
 NORMBGCOLOR="#bd93f9"
 NORMFGCOLOR="#282a36"
@@ -8,28 +7,7 @@ SELBGCOLOR="#50fa7b"
 SELFGCOLOR="#282a36"
 SHELL="/bin/bash"
 
-# export BEMENU_OPTS=" \
-#     --line-height 19 \
-#     --fn $FONT \
-#     --cf $NORMBGCOLOR \
-#     --tb $SELBGCOLOR \
-#     --tf $SELFGCOLOR \
-#     --fb $NORMBGCOLOR \
-#     --ff $SELFGCOLOR \
-#     --nb $SELFGCOLOR \
-#     --nf $NORMBGCOLOR \
-#     --hb '#44475a'\
-#     --hf '#50fa7b'\
-#     --sb '#44475a'\
-#     --sf '#50fa7b'\
-#     --scb $SELFGCOLOR \
-#     --scf '#ff79c6'"
 
-# case $1 in
-#     powermenu)
-#         SELECTED="$(:| bemenu \
-#             -i -p "(l)ock  (e)xit  (r)eboot  (s)hutdown"
-#         )"
 
 case $1 in
     powermenu)
@@ -63,8 +41,6 @@ case $1 in
             $(echo "$PATH" | tr : ' ') | sort -u))    | dmenu       \
             -fn '$FONT' -nb '$NORMBGCOLOR' -nf '$NORMFGCOLOR'       \
             -sb '$SELBGCOLOR' -sf '$SELFGCOLOR'"
-        # j4-dmenu-desktop --use-xdg-de --dmenu="(cat ; (stest -flx   \
-        #     $(echo "$PATH" | tr : ' ') | sort -u))    | bemenu"
     ;;
     clipmenu)
         clipmenu -fn "$FONT" -nb "$NORMBGCOLOR" -nf "$NORMFGCOLOR" -sb "$SELBGCOLOR" -sf "$SELFGCOLOR"
