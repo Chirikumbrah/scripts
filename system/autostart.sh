@@ -1,6 +1,12 @@
 #!/bin/bash
 
-# Set default apps for mimetypes
+# set wallpaper
+feh --bg-scale --randomize ~/.yrdata/images/wallpapers/
+
+# monitor hotplug daemon
+xplugd &
+
+# set default apps for mimetypes
 ~/.scripts/system/xdg-defaults.sh
 
 # set brightness
@@ -13,7 +19,7 @@ picom-ft-labs                             \
      --animation-window-mass 0.5          \
      --animation-for-open-window zoom     \
      --animation-stiffness-in-tag 350     \
-     --animation-stiffness-tag-change 350 
+     --animation-stiffness-tag-change 350 &
 
 # keyboard layouts
 setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle' -print | xkbcomp - "$DISPLAY" &
@@ -21,7 +27,7 @@ setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle' -print | xkbcomp - "$DI
 # update/create user dirs
 xdg-user-dirs-update &
 
-# Setup dunst daemon
+# setup dunst daemon
 kill $(pgrep -x dunst)
 
 # run warpd
