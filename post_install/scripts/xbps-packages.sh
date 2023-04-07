@@ -63,7 +63,7 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
 # themes
     papirus-icon-theme breeze-cursors xcursor-themes \
 # X11 dependencies
-    libXtst-devel libXi-devel libX11-devel libXft-devel libXinerama-devel libXfixes-devel \
+    libXtst-devel libXi-devel libX11-devel libXft-devel libXinerama-devel libXfixes-devel xplugd \
 # python
     python-devel python3-devel python3-pip \
 # wine
