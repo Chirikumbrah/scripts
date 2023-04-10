@@ -1,9 +1,9 @@
 #!/bin/bash
 
 export IMAGE_VIEWER=qimgv
-export PDF_VIEWER=org.pwmt.zathura
+export PDF_VIEWER=qpdfview
 export VIDEO_PLAYER=mpv
-export BROWSER=chromium
+export BROWSER=firefox
 export EXPLORER=pcmanfm-qt
 
 # img/vid
