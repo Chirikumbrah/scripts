@@ -3,7 +3,7 @@
 export IMAGE_VIEWER=qimgv
 export PDF_VIEWER=qpdfview
 export VIDEO_PLAYER=mpv
-export BROWSER=firefox
+export BROWSER=chromium
 export EXPLORER=pcmanfm-qt
 
 # img/vid
