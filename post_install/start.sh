@@ -9,6 +9,7 @@ sh ./scripts/setup-groups.sh
 sh ./scripts/flatpak-packages.sh
 sh ./scripts/fish-install.fish
 sh ./scripts/llama-installing.sh
+sh ./scripts/appimages.sh
 sh ./scripts/terraform-installing.sh
 sh ./scripts/picom-installing.sh.sh
 sh ./scripts/warpd-installing.sh
