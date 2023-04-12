@@ -7,7 +7,6 @@ sh ./scripts/pip-packages.sh
 sh ./scripts/npm-packages.sh
 sh ./scripts/setup-groups.sh
 sh ./scripts/flatpak-packages.sh
-sh ./scripts/flatpak-override-fs.sh
 sh ./scripts/fish-install.fish
 sh ./scripts/llama-installing.sh
 sh ./scripts/terraform-installing.sh
