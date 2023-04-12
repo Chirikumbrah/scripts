@@ -30,7 +30,6 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     qt6ct qt5ct qt5-devel libheic-devel \
 # xdg packages
     xdg-utils xdg-user-dirs \
-    xdg-desktop-portal-gtk \
 # drivers
     intel-video-accel intel-ucode \
     xorg-video-drivers xorg-input-drivers \
