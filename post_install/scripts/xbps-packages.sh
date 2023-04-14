@@ -20,7 +20,7 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     libdrm-32bit libglvnd-32bit cronie packer ark automake xkb-switch \
     base-devel binutils imlib2-devel \
 # base
-    git wget curl \
+    git stow wget curl \
 # network
     # net-tools
     # iwd openresolv \
