@@ -49,7 +49,7 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
 # web
     firefox chromium qbittorrent \
 # pictures
-    ImageMagick qimgv feh nsxiv \
+    ImageMagick qimgv nitrogen \
 # video
     mpv obs \
 # audio

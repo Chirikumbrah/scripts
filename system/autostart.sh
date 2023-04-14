@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # set wallpaper
-feh --bg-scale --randomize ~/.yrdata/images/wallpapers/
+# feh --bg-scale --randomize ~/.yrdata/images/wallpapers/ &
+nitrogen --restore &
 
 # monitor hotplug daemon
 xplugd &
