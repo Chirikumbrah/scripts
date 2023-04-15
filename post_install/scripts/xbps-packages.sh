@@ -19,8 +19,8 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     ctags libgcc-32bit gimp libstdc++-32bit \
     libdrm-32bit libglvnd-32bit cronie packer ark automake xkb-switch \
     base-devel binutils imlib2-devel \
-# base
-    git stow wget curl \
+# core
+    exa tldr fd duf fzf bat git stow wget curl procs ripgrep \
 # network
     # net-tools
     # iwd openresolv \
@@ -82,7 +82,7 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     tlp tlp-rdw udisks2 psutils wmctrl xauth xbacklight \
     xdo xdotool xkill xorg j4-dmenu-desktop \
     orage orage xz fish-shell starship delta dbus-elogind dbus-elogind-libs dbus-x11 \
-    sl exa tldr fd duf fzf bat tmux \
+    sl tmux \
     galculator geteltorito grc zoxide pycp flatpak
 # Wayland dependencies
     # xorg-server-xwayland Waybar foot wlroots-devel bemenu swaylock swaybg ts \
