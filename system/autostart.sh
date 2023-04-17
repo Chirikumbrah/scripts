@@ -7,6 +7,9 @@ nitrogen --restore &
 # monitor hotplug daemon
 xplugd &
 
+# libinput
+libinput-gestures-setup start
+
 # set default apps for mimetypes
 ~/.scripts/system/xdg-defaults.sh
 
