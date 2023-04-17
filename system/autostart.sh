@@ -4,6 +4,9 @@
 # feh --bg-scale --randomize ~/.yrdata/images/wallpapers/ &
 nitrogen --restore &
 
+# volume control
+volctl &
+
 # monitor hotplug daemon
 xplugd &
 
@@ -51,6 +54,7 @@ udiskie -ans &
 
 # clipboard management
 clipmenud &
+
 
 # battery status notifications
 ~/.scripts/system/battery-notify.sh &

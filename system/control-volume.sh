@@ -7,7 +7,6 @@ function volume_notification {
     VOL_LEVEL=$(pamixer --get-volume)
     # BAR=$(seq --separator="━" 0 "$(($(pamixer --get-volume) / 5))" | sed 's/[0-9]//g')
     [ "$VOL" = "muted" ] || [ "$VOL" = "0%" ]  && VOL_ICON=$volMuted || VOL_ICON=$volSound
-    # dunstify -i "$VOL_ICON" -r 2593 " $BAR" -t 5000
     dunstify -i "$VOL_ICON" -r 2593 -h int:value:"$VOL_LEVEL" " Volume: $VOL_LEVEL%" -t 5000
 }
 
@@ -32,15 +31,15 @@ function mic_notification {
 case $1 in
     up)
         pamixer -i 5
-        volume_notification &
+        # volume_notification &
         ;;
     down)
         pamixer -d 5
-        volume_notification &
+        # volume_notification &
         ;;
     mute)
         pamixer -t
-        volume_notification &
+        # volume_notification &
         ;;
     mic)
         pamixer --default-source -t
