@@ -4,9 +4,6 @@
 # feh --bg-scale --randomize ~/.yrdata/images/wallpapers/ &
 nitrogen --restore &
 
-# volume control
-volctl &
-
 # monitor hotplug daemon
 xplugd &
 
@@ -75,4 +72,3 @@ nm-applet --indicator &
 
 # nextcloud client
 nextcloud --background &
-

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MIC=$(pamixer --default-source --get-volume-human)
-COLOR="^c#FF92DF^"
+COLOR="^c#f1fa8c^"
 
 [ "$MIC" = "muted" ] && ICON="" || ICON=""
 

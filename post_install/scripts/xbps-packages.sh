@@ -54,7 +54,7 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     mpv obs \
 # audio
     # alsa-pipewire pipewire pipewire-devel rtkit qjackctl libjack-pipewire wireplumber wireplumber-devel gstreamer1-pipewire \
-    install alsa-lib alsa-lib-devel alsa-plugins alsa-tools alsa-plugins-pulseaudio volctl pavucontrol-qt \
+    install alsa-lib alsa-lib-devel alsa-plugins alsa-tools alsa-plugins-pulseaudio pavucontrol-qt \
 # fonts
     font-fantasque-sans-ttf terminus-font font-material-design-icons-ttf ttf-material-icons \
     font-adobe-utopia-100dpi font-adobe-utopia-75dpi font-misc-misc terminus-font noto-fonts-ttf-extra noto-fonts-emoji \
