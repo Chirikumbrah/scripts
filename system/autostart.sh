@@ -25,8 +25,11 @@ picom-ft-labs                             \
      --animation-stiffness-in-tag 350     \
      --animation-stiffness-tag-change 350 &
 
-# keyboard layouts
+# keyboard layouts for DWM
 setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle' -print | xkbcomp - "$DISPLAY" &
+
+# keyboard layouts for i3wm
+# setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle' &
 
 # update/create user dirs
 xdg-user-dirs-update &
