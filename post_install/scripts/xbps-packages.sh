@@ -83,7 +83,7 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     tlp tlp-rdw udisks2 psutils wmctrl xauth xbacklight \
     xdo xdotool xkill xorg j4-dmenu-desktop \
     orage orage xz fish-shell starship delta dbus-elogind dbus-elogind-libs dbus-x11 \
-    sl tmux \
+    sl tmux nix \
     galculator geteltorito grc zoxide pycp flatpak
 # Wayland dependencies
     # xorg-server-xwayland Waybar foot wlroots-devel bemenu swaylock swaybg ts \
