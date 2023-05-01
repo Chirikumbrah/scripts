@@ -21,6 +21,7 @@ case $1 in
         )"
 
         if [ "$SELECTED" = "l" ] || [ "$SELECTED" = "lock" ] || [ "$SELECTED" = "д" ]; then
+            xkblayout-state set 0 # Set en keyboard layout
             dunstify -t 1000 "locking..." -u low
             sh "$HOME/.scripts/system/lock.sh"
         elif [ "$SELECTED" = "e" ] || [ "$SELECTED" = "exit" ] || [ "$SELECTED" = "у" ]; then
