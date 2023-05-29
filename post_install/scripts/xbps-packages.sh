@@ -42,7 +42,7 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
 # bluetooth
     blueman bluez bluez-alsa libspa-bluetooth \
 # text editors
-    FeatherPad helix \
+    FeatherPad helix vim \
 # documents
     libreoffice qpdfview \
     nextcloud-client \
