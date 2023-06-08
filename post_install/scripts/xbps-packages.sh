@@ -79,7 +79,7 @@ sudo xbps-install -Suy lm_sensors i3lock-color mtools docker tree \
     htop kdeconnect keepassxc libev libev-devel meson ninja \
     libgnome-keyring lingot lvm2 SDL2_image libenet make xcb-util-image-devel xcb-util-image \
     mdadm neofetch gstreamer1 libnuma xcb-util-renderutil-devel xcb-util-renderutil \
-    LGOGDownloader clipit gparted picard telegram-desktop \
+    LGOGDownloader clipit gparted qdirstat picard telegram-desktop \
     tlp tlp-rdw udisks2 psutils wmctrl xauth xbacklight \
     xdo xdotool xkill xorg j4-dmenu-desktop \
     orage orage xz fish-shell starship delta dbus-elogind dbus-elogind-libs dbus-x11 \
