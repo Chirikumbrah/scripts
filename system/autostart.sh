@@ -32,7 +32,7 @@ setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle' -print | xkbcomp - "$DI
 # setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle' &
 
 # update/create user dirs
-xdg-user-dirs-update &
+# xdg-user-dirs-update &
 
 # setup dunst daemon
 kill $(pgrep -x dunst)
