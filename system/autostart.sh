@@ -73,5 +73,7 @@ clipmenud &
 # network manager
 nm-applet --indicator &
 
+emacs --daemon &
+
 # nextcloud client
 nextcloud --background &

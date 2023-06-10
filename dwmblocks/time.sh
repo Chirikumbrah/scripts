@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COLOR="^c#8be9fd^"
+COLOR="^c#ffb86c^" # orange
 ICON=""
 TIME="$(date '+%H:%M')"
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COLOR="^c#f1fa8c^" # yellow
+COLOR="^c#ffb86c^" # orange
 VOL=$(pamixer --get-volume-human)
 [ "$VOL" = "muted" ] || [ "$VOL" = "0%" ] && ICON="" || ICON=" $VOL"
 
