@@ -81,7 +81,7 @@ case "$1" in
                 logger "LID closed, suspending..."
                 # USER=$(ps -C i3 -o user=)
                 USER="yr"
-                if test $USER; then DISPLAY=:0.0 su $USER -c "/home/yr/.scripts/system/lock.sh"; fi
+                if test $USER; then DISPLAY=:0.0 su $USER -c "/home/yr/.scripts/system/xorg/lock.sh"; fi
                 # zzz
                 ;;
             open)

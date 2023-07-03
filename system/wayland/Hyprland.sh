@@ -1,21 +1,18 @@
 #!/bin/sh
 
-cd ~
+# start polkit agent
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# Log WLR errors and logs to the hyprland log. Recommended
-export HYPRLAND_LOG_WLR=1
+# init keyring
+eval "$(gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)"
 
-# Tell XWayland to use a cursor theme
-export XCURSOR_THEME=Breeze-Purple
+# export keyring
+export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
 
-# Set a cursor size
-export XCURSOR_SIZE=24
+# # set QT platform theme engine
+# export QT_QPA_PLATFORMTHEME="qt5ct"
 
-# Example IME Support: fcitx
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-export SDL_IM_MODULE=fcitx
-export GLFW_IM_MODULE=ibus
+# Setup autostart
+# ~/.scripts/system/wayland/autostart.sh &
 
 exec Hyprland
